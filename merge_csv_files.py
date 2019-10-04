@@ -26,12 +26,18 @@ def concat_csv_files(path_csv, path_and_name_merged_csv, cwd):
 
     os.chdir(path_csv)
     csvList = glob.glob('*.csv')
+    # print('csv file list:\n', csvList)
 
     dfList = []
 
     for f in csvList:
+        bld_id = f.split('.')[0]
+
         df = pd.read_csv(f, header=0)
+        df['building_id'] = bld_id
+
         dfList.append(df)
+
         print(f)
         print(df.shape)
         print(df.describe())
