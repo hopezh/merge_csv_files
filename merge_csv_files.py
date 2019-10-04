@@ -1,3 +1,8 @@
+"""
+merge multiple csv files in one directory
+
+"""
+
 import os
 import glob
 import shutil
