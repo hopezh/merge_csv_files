@@ -11,7 +11,7 @@ import pandas as pd
 from datetime import datetime
 
 # --------------------------------------------------------
-# get start date & time
+# get start time stamp
 start_time = datetime.now()
 start_time_str = start_time.strftime('%Y-%m-%d %H:%M:%S')
 print('start date & time:\n', start_time_str, '\n')
@@ -68,3 +68,15 @@ print('full path and name of merged csv:\n', path_and_name_merged_csv, '\n')
 # --------------------------------------------------------
 # concate csv files
 concat_csv_files(path_csv, path_and_name_merged_csv, cwd)
+
+# --------------------------------------------------------
+# print finish time stamp and time used
+finish_time = datetime.now()
+finish_time_str = finish_time.strftime('%Y-%m-%d %H:%M:%S')
+
+time_used = finish_time - start_time
+
+print( 'started  at : ' + start_time_str )
+print( 'finished at : ' + finish_time_str )
+print( 'time used   : ' + str(round(time_used.seconds/60, 1)) + ' minutes')
+print( "...D'oh!.........................................................")
