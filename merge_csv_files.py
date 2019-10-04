@@ -32,10 +32,10 @@ def concat_csv_files(path_csv, path_and_name_merged_csv, cwd):
     for f in csvList:
         df = pd.read_csv(f, header=0)
         dfList.append(df)
-    #         print(f)
-    #         print(df.shape)
-    #         print(df.describe())
-    #         print(df.head())
+        print(f)
+        print(df.shape)
+        print(df.describe())
+        print(df.head(), '\n')
 
     concatDf = pd.concat(dfList, axis=0)
     concatDf.to_csv(path_and_name_merged_csv, index=None)
