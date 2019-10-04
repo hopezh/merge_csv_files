@@ -31,10 +31,11 @@ def concat_csv_files(path_csv, path_and_name_merged_csv, cwd):
     dfList = []
 
     for f in csvList:
-        bld_id = f.split('.')[0]
+        # bld_id = f.split('.')[0]
 
         df = pd.read_csv(f, header=0)
-        df['building_id'] = bld_id
+
+        # df['building_id'] = bld_id
 
         dfList.append(df)
 
